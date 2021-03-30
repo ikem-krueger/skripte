@@ -17,7 +17,7 @@ main() {
         declare $(echo $LINE|sed 's/&/ /g'|tr '[:lower:]' '[:upper:]')
 
         # convert MTYPE from "256qam" to "QAM/256"
-        MTYPE=$(echo $MTYPE|tr '[:lower:]' '[:upper:]'|sed -r 's/^([0-9]+)(.*)/\2\/\1/')
+        MTYPE=$(echo $MTYPE|sed -r 's/^([0-9]+)(.*)/\2\/\1/')
 
         echo "[CHANNEL]"
         echo -e "\tDELIVERY_SYSTEM = DVBC/ANNEX_A"
@@ -33,7 +33,7 @@ main() {
 if [ $# -eq 0 ]
 then
     show_help
-    
+
     exit 1
 fi
 
@@ -41,7 +41,7 @@ M3U="$1"
 
 case "$M3U" in
     *.m3u)
-        main;;
+        main > de-AVM;;
     *)
         show_help;;
 esac
