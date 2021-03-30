@@ -16,7 +16,7 @@ main() {
         # make variables out of "freq=586&mtype=256qam&sr=6900"
         declare $(echo $LINE|sed 's/&/ /g'|tr '[:lower:]' '[:upper:]')
 
-        # convert MTYPE from "256qam" to "QAM/256"
+        # convert MTYPE from "256QAM" to "QAM/256"
         MTYPE=$(echo $MTYPE|sed -r 's/^([0-9]+)(.*)/\2\/\1/')
 
         echo "[CHANNEL]"
