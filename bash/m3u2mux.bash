@@ -1,7 +1,7 @@
 #!/bin/bash
 
 show_help() {
-    echo "Usage: bash m3u2mux radio.m3u tvhd.m3u tvsd.m3u"
+    echo "Usage: m3u2mux radio.m3u tvhd.m3u tvsd.m3u"
 }
 
 main() {
