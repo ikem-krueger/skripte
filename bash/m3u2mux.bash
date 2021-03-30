@@ -1,7 +1,5 @@
 #!/bin/bash
 
-SORT="C:\Program Files\Git\usr\bin\sort.exe"
-
 show_help() {
     echo "Usage: bash m3u2mux radio.m3u tvhd.m3u tvsd.m3u"
 }
@@ -11,7 +9,7 @@ main() {
     echo "# Created from m3u2conf"
     echo "# freq sr fec mod"
 
-    LINES=$(grep "^rtsp://" "$M3U"|cut -d'&' -f2,5,6|"$SORT" -u)
+    LINES=$(grep "^rtsp://" "$M3U"|cut -d'&' -f2,5,6|sort -u)
 
     for LINE in $LINES;
     do
